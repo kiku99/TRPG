@@ -9,10 +9,10 @@ public class Character {
     Scanner scanner = new Scanner(System.in);
 
     public enum Jobs{
-        KNIGHT("ê¸°ì‚¬"),
-        THIEF("ë„ì "),
-        MONK("ìˆ˜ë„ìŠ¹"),
-        ARCHER("ê¶ìˆ˜")
+        KNIGHT("±â»ç"),
+        THIEF("µµÀû"),
+        MONK("¼öµµ½Â"),
+        ARCHER("±Ã¼ö")
         ;
 
         private final String label;
@@ -26,53 +26,72 @@ public class Character {
     }
 
     public enum Race{
-        OAK("ì˜¤í¬"),
-        HUMAN("ì¸ê°„"),
-        ELF("ì—˜í”„"),
-        DWARF("ë“œì›Œí”„")
+        OAK("¿ÀÅ©"),
+        HUMAN("ÀÎ°£"),
+        ELF("¿¤ÇÁ"),
+        DWARF("µå¿öÇÁ")
         ;
 
         private final String label;
         Race(String label) {
             this.label = label;
         }
-
         public String label(){
             return label;
         }
     }
 
 public void createCharacter(){
-    System.out.println("ìºë¦­í„°ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.");
+    System.out.println("Ä³¸¯ÅÍ¸¦ »ı¼ºÇÕ´Ï´Ù.");
     selectRace();
-
+    selectJobs();
 
 }
 
 public void selectJobs(){
-
+    System.out.println("Á÷¾÷À» ¼±ÅÃÇØ ÁÖ¼¼¿ä");
+    System.out.println("1.±â»ç 2.µµÀû 3.¼öµµ½Â 4.±Ã¼ö");
+    int jobs = scanner.nextInt();
+    switch (jobs){
+        case 1 :
+            map.put("jobs", Jobs.KNIGHT.name());
+            System.out.println("´ç½ÅÀÇ Á÷¾÷Àº ±â»çÀÔ´Ï´Ù.");
+            break;
+        case 2:
+            map.put("jobs", Jobs.THIEF.name());
+            System.out.println("´ç½ÅÀÇ Á÷¾÷Àº µµÀûÀÔ´Ï´Ù.");
+            break;
+        case 3:
+            map.put("jobs", Jobs.MONK.name());
+            System.out.println("´ç½ÅÀÇ Á÷¾÷Àº ¼öµµ½ÂÀÔ´Ï´Ù.");
+            break;
+        case 4:
+            map.put("jobs", Jobs.ARCHER.name());
+            System.out.println("´ç½ÅÀÇ Á÷¾÷Àº ±Ã¼öÀÔ´Ï´Ù.");
+            break;
+    }
 }
 
 public void selectRace(){
-    System.out.println("ì¢…ì¡±ì„ ì„ íƒí•´ ì£¼ì„¸ìš”");
-    System.out.println("1.ì˜¤í¬ 2.ì¸ê°„ 3.ì—˜í”„ 4.ë“œì›Œí”„");
+    System.out.println("Á¾Á·À» ¼±ÅÃÇØ ÁÖ¼¼¿ä");
+    System.out.println("1.¿ÀÅ© 2.ÀÎ°£ 3.¿¤ÇÁ 4.µå¿öÇÁ");
     int race = scanner.nextInt();
     switch (race){
         case 1 :
             map.put("race", Race.OAK.name());
-            System.out.println("ë‹¹ì‹ ì˜ ì¢…ì¡±ì€ ì˜¤í¬ì…ë‹ˆë‹¤.");
+            System.out.println("´ç½ÅÀÇ Á¾Á·Àº ¿ÀÅ©ÀÔ´Ï´Ù.");
             break;
         case 2:
             map.put("race", Race.HUMAN.name());
-            System.out.println("ë‹¹ì‹ ì˜ ì¢…ì¡±ì€ ì¸ê°„ ì…ë‹ˆë‹¤.");
+            System.out.println("´ç½ÅÀÇ Á¾Á·Àº ÀÎ°£ ÀÔ´Ï´Ù.");
             break;
         case 3:
             map.put("race", Race.ELF.name());
-            System.out.println("ë‹¹ì‹ ì˜ ì¢…ì¡±ì€ ì—˜í”„ì…ë‹ˆë‹¤.");
+            System.out.println("´ç½ÅÀÇ Á¾Á·Àº ¿¤ÇÁÀÔ´Ï´Ù.");
             break;
         case 4:
             map.put("race", Race.DWARF.name());
-            System.out.println("ë‹¹ì‹ ì˜ ì¢…ì¡±ì€ ë“œì›Œí”„ì…ë‹ˆë‹¤.");
+            System.out.println("´ç½ÅÀÇ Á¾Á·Àº µå¿öÇÁÀÔ´Ï´Ù.");
             break;
     }
 }
