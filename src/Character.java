@@ -9,43 +9,18 @@ public class Character {
     Scanner scanner = new Scanner(System.in);
 
     public enum Jobs{
-        KNIGHT("기사"),
-        THIEF("도적"),
-        MONK("수도승"),
-        ARCHER("궁수")
-        ;
-
-        private final String label;
-        Jobs(String label) {
-            this.label = label;
+        KNIGHT, THIEF(), MONK, ARCHER
         }
 
-        public String label(){
-            return label;
-        }
-    }
 
     public enum Race{
-        OAK("오크"),
-        HUMAN("인간"),
-        ELF("엘프"),
-        DWARF("드워프")
-        ;
-
-        private final String label;
-        Race(String label) {
-            this.label = label;
-        }
-        public String label(){
-            return label;
-        }
+        OAK, HUMAN, ELF, DWARF
     }
 
 public void createCharacter(){
     System.out.println("캐릭터를 생성합니다.");
     selectRace();
     selectJobs();
-
 }
 
 public void selectJobs(){
@@ -55,19 +30,19 @@ public void selectJobs(){
     switch (jobs){
         case 1 :
             map.put("jobs", Jobs.KNIGHT.name());
-            System.out.println("당신의 직업은 기사입니다.");
+            System.out.println("당신의 직업은 기사입니다.\n");
             break;
         case 2:
             map.put("jobs", Jobs.THIEF.name());
-            System.out.println("당신의 직업은 도적입니다.");
+            System.out.println("당신의 직업은 도적입니다.\n");
             break;
         case 3:
             map.put("jobs", Jobs.MONK.name());
-            System.out.println("당신의 직업은 수도승입니다.");
+            System.out.println("당신의 직업은 수도승입니다.\n");
             break;
         case 4:
             map.put("jobs", Jobs.ARCHER.name());
-            System.out.println("당신의 직업은 궁수입니다.");
+            System.out.println("당신의 직업은 궁수입니다.\n");
             break;
     }
 }
@@ -79,19 +54,19 @@ public void selectRace(){
     switch (race){
         case 1 :
             map.put("race", Race.OAK.name());
-            System.out.println("당신의 종족은 오크입니다.");
+            System.out.println("당신의 종족은 오크입니다.\n");
             break;
         case 2:
             map.put("race", Race.HUMAN.name());
-            System.out.println("당신의 종족은 인간 입니다.");
+            System.out.println("당신의 종족은 인간 입니다.\n");
             break;
         case 3:
             map.put("race", Race.ELF.name());
-            System.out.println("당신의 종족은 엘프입니다.");
+            System.out.println("당신의 종족은 엘프입니다.\n");
             break;
         case 4:
             map.put("race", Race.DWARF.name());
-            System.out.println("당신의 종족은 드워프입니다.");
+            System.out.println("당신의 종족은 드워프입니다.\n");
             break;
     }
 }
