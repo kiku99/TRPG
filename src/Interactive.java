@@ -9,7 +9,7 @@ public class Interactive {
 
 
     public Interactive(){
-        character = new Character();
+        this.character = new Character();
         scanner = new Scanner(System.in);
     }
 
@@ -25,6 +25,7 @@ public class Interactive {
         switch (jobs) {
             case 1 -> {
                 Character.characterMap.put(KEY_JOB, Character.Jobs.KNIGHT.name());
+                character.setJob(Character.Jobs.KNIGHT);
                 System.out.println("당신의 직업은 기사입니다.\n");
 
             }
