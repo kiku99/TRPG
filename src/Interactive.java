@@ -4,7 +4,9 @@ public class Interactive {
 
     Character character;
     Scanner scanner;
-    private static final String KEY_JOB = "jobs";
+    public static final String KEY_JOB = "jobs";
+    public static final String KEY_RACE = "race";
+
 
     public Interactive(){
         character = new Character();

@@ -4,10 +4,12 @@ public class Menu {
 
     Scanner scanner;
     Interactive interactive;
+    Status status;
 
     public Menu(){
-        interactive = new Interactive();
-        scanner = new Scanner(System.in);
+        this.interactive = new Interactive();
+        this.status = new Status();
+        this.scanner = new Scanner(System.in);
     }
 
     public void mainMenu(){
@@ -19,7 +21,10 @@ public class Menu {
 
         int menuNum = scanner.nextInt();
         switch (menuNum){
-            case 1 -> interactive.createCharacter();
+            case 1 -> {
+                interactive.createCharacter();
+                status.setStatus();
+            }
             case 2 -> System.exit(0);
         }
 

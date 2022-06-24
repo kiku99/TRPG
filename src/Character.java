@@ -14,9 +14,4 @@ public class Character {
 //public void selectJob(Character.Jobs job) {
 //        characterMap.put("jobs", job.name());
 //}
-    public void setStatus(){
-        if (characterMap.get("race").equals("OAK")){
-            System.out.println("test oak");
-        }
-    }
 }
