@@ -3,6 +3,17 @@ import java.util.Scanner;
 
 public class Character {
 
+    private Jobs job;
+    private Race race;
+
+    public void setJob(Jobs job) {
+        this.job = job;
+    }
+
+    public void setRace(Race race) {
+        this.race = race;
+    }
+
     static HashMap<String, String> characterMap = new HashMap<String, String>();
     public enum Jobs{
         KNIGHT, THIEF, MONK, ARCHER
@@ -14,9 +25,4 @@ public class Character {
 //public void selectJob(Character.Jobs job) {
 //        characterMap.put("jobs", job.name());
 //}
-    public void setStatus(){
-        if (characterMap.get("race").equals("OAK")){
-            System.out.println("test oak");
-        }
-    }
 }
